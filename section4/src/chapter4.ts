@@ -32,3 +32,5 @@ function warning(animal: Animal) {
     animal;
   }
 }
+
+i guess just inner strength, not wanting to be a victim. it's not what happens to you it's how you handle what happens to you
