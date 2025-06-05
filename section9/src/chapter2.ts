@@ -27,3 +27,5 @@ type PromiseUnpack<T> = T extends Promise<infer R> ? R : never;
 type PromiseA = PromiseUnpack<Promise<number>>; // number
 
 type PromiseB = PromiseUnpack<Promise<string>>; // string
+
+//
