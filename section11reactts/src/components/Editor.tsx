@@ -1,11 +1,13 @@
-import { ReactElement, useState } from "react";
+import { ReactElement, useContext, useState } from "react";
+import { TodoDispatchContext, useTodoDispatch } from "../App";
 
 interface Props {
-  onClickAdd: (text: string) => void;
   children: ReactElement; // children을 넣고싶으면 << 요거 넣어야댐
 }
 
 export default function Editor(props: Props) {
+  const dispatch = useTodoDispatch();
+
   // const [text, setText] = useState<string>();
   const [text, setText] = useState("");
   const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -13,7 +15,7 @@ export default function Editor(props: Props) {
   };
 
   const onClickButton = () => {
-    props.onClickAdd(text);
+    dispatch.onClickAdd(text);
     setText("");
   };
   return (
